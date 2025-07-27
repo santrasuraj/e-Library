@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="E_Library.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <%--bootstrap css--%>
+      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--sweet alert notifications--%>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <%--datatables css--%>
+      <%--<link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />--%>
+    <link href="datatables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+      <%--fontawesome css--%>
+      <link href="fontawesome/css/all.css" rel="stylesheet" />
+      <%--our custom css--%>
+      <link href="css/customstylesheet.css" rel="stylesheet" />
+      <%--jquery--%>
+      <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+      <%--popper js--%>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <%--bootstrap js--%>
+      <script src="bootstrap/js/bootstrap.min.js"></script>
+      <%--Datatables js--%>
+      <%--<script src="datatables/js/jquery.dataTables.min.js"></script>--%>
+    <script src="datatables/js/dataTables.min.js"></script>
+
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+<div>
+            <nav class="navbar navbar-expand-lg navbar-primary">
+               <a class="navbar-brand" href="#">
+                   <img src="imgs/books.png" width="30" height="30"  />
+                   e-Library
+               </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="HomePage.aspx">Home</a>
+                     </li>
+                     
+                     <li class="nav-item active">
+                        <a class="nav-link" href="aboutus.aspx">About Us</a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="T&C.html">Terms</a>
+                     </li>
+                  </ul>
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                          <%--<asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Check" OnClick="Button1_Click" />--%>
+                           <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" OnClick="LinkButton5_Click1"  Visible="false">Check Balance</asp:LinkButton>
+                        </li>
+                     <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">View Books</asp:LinkButton>
+                     </li>
+                     <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">User Login</asp:LinkButton>
+                     </li>
+                     <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Sign Up</asp:LinkButton>
+                     </li>
+                     <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="False">Logout</asp:LinkButton>
+                     </li>
+                     <li class="nav-item active">
+                        <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" OnClick="LinkButton7_Click" Visible="False">Hello user</asp:LinkButton>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+         <!-- Main Content Placeholder -->
+         <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+         </div>
+         <!-- Main Content Placeholder -->
+        <!-- footer section start -->
+		<footer id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<a href="index.html"><img src="imgs/books.png"/" alt="" class="img-fluid logo-footer"></a>
+                      <div class="footer-about">
+                           <h3>India's most sincere e-Library.</h3>
+                                 <%--<p>
+                                     Digi Bank Payments Bank offers secure, transparent and risk-free banking
+                                     at your fingertips. With instant account opening, virtual debit card
+                                     and zero balance requirements, experience the future of banking
+                                     today.
+                                 </p>--%>
+                      </div>
+
+					</div>
+					<div class="col-md-3">
+						<div class="useful-link">
+							<h2>Useful Links</h2>
+							<img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+							<div class="use-links">
+								<li><asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Admin Login</asp:LinkButton></li>
+								<li><asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="False">Author Management</asp:LinkButton></li>
+								<li><asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="False">Publisher Management</asp:LinkButton></li>
+								<li><asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server" OnClick="LinkButton8_Click" Visible="False">Book Inventory</asp:LinkButton></li>
+                                <li><asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server" OnClick="LinkButton9_Click" Visible="False">Book Issuing</asp:LinkButton></li>
+                                <li><asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server" OnClick="LinkButton10_Click" Visible="False">Member Management</asp:LinkButton>
+</li>
+							</div>
+						</div>
+
+					</div>
+                    <div class="col-md-3">
+                        <div class="social-links">
+							<h2>Follow Us</h2>
+							<img src="./assets/images/about/home_line.png" alt="">
+							<div class="social-icons">
+								<li><a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+								<li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+								<li><a href="#"><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+							</div>
+						</div>
+                    
+
+                    </div>
+					<div class="col-md-3">
+						<div class="address">
+							<h2>Address</h2>
+							<img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
+							<div class="address-links">
+								<li class="address1"><i class="fa-solid fa-location-dot"></i> Kolathur ramankulam-
+									Malappuram Dt 
+								   Kerala 679338</li>
+								   <li><a href="#"><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
+								   <li><a href="#"><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+							</div>
+						</div>
+					</div>
+                  
+				</div>
+			</div>
+
+		</footer>
+		<!-- footer section end -->
+		<!-- footer copy right section start -->
+		<section id="copy-right">
+			<div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>  
+				&copy All right Reversed. <a href="#">Online Library Management System</a> 
+
+
+			</div>
+
+		</section>
+		<!-- footer copy right section end -->
+
+    </form>
+</body>
+</html>
